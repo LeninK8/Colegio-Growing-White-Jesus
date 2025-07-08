@@ -1,19 +1,47 @@
+/* estilos.css */
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #e8f0fe;
-  color: #003366;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+  color: #002b5c;
 }
-header {
-  background-color: #a7d3f3;
-  padding: 1rem;
+
+.encabezado {
+  background-color: #0d47a1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-login {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #64b5f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #42a5f5;
+}
+
+.contenido {
+  padding: 30px;
   text-align: center;
 }
-button {
-  padding: 0.5rem 1rem;
-  background-color: #a3d9a5;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+
+.bienvenida h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.bienvenida p {
+  font-size: 1.2em;
+  color: #33691e;
 }
