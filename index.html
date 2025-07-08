@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Growing White Jesús</title>
+  <title>Colegio Growing White Jesús</title>
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
-  <header>
+  <header class="encabezado">
     <h1>Colegio Growing White Jesús</h1>
-    <button onclick="login()">Iniciar sesión con Google</button>
+    <button class="btn-login" onclick="login()">Iniciar sesión con Google</button>
     <div id="user-info"></div>
   </header>
 
-  <main>
-    <h2>Bienvenidos a la web del colegio</h2>
-    <p>Aquí podrás ver videos, eventos y más</p>
+  <main class="contenido">
+    <section class="bienvenida">
+      <h2>Bienvenidos a la web del colegio</h2>
+      <p>Aquí podrás ver videos, eventos y mucho más 🌟</p>
+    </section>
   </main>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/app.js"></script>
 </body>
