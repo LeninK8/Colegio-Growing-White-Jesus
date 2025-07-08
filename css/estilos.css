@@ -1,47 +1,76 @@
-/* estilos.css */
-
+/* Reset básico */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-  color: #002b5c;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+  color: #2e3c53;
 }
 
+/* Encabezado */
 .encabezado {
-  background-color: #0d47a1;
-  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #bbdefb;
   padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Título y versículo */
+.titulo-contenedor {
+  flex: 1;
+  text-align: left;
+}
+
+.titulo {
+  font-size: 2.2em;
+  margin: 0;
+  color: #0d47a1;
+}
+
+.versiculo {
+  font-style: italic;
+  font-size: 1em;
+  margin-top: 8px;
+  color: #4a4a4a;
+}
+
+/* Login */
+.login-box {
+  flex-shrink: 0;
+  text-align: right;
 }
 
 .btn-login {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-weight: bold;
-  background-color: #64b5f6;
+  padding: 10px 18px;
+  background-color: #aed581;
   border: none;
-  border-radius: 8px;
-  color: white;
+  border-radius: 0px;
+  color: #ffffff;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .btn-login:hover {
-  background-color: #42a5f5;
+  background-color: #9ccc65;
 }
 
+/* Contenido principal */
 .contenido {
-  padding: 30px;
+  padding: 40px 20px;
   text-align: center;
 }
 
 .bienvenida h2 {
   font-size: 2em;
   margin-bottom: 10px;
+  color: #388e3c;
 }
 
 .bienvenida p {
   font-size: 1.2em;
-  color: #33691e;
+  color: #455a64;
 }
