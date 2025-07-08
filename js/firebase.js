@@ -1,4 +1,4 @@
-// Configuración de Firebase
+// Configuración de Firebase para versión 8
 const firebaseConfig = {
   apiKey: "AIzaSyDzThaQPNrqFFPNYUFQ3pLZhcs7vInZkVI",
   authDomain: "colegio-growing-white-jesus.firebaseapp.com",
@@ -9,5 +9,6 @@ const firebaseConfig = {
   measurementId: "G-1XGF2R4ZN4"
 };
 
-// Inicializar Firebase (usando SDK clásico para la web)
+// Inicializar Firebase (versión 8)
 firebase.initializeApp(firebaseConfig);
+
