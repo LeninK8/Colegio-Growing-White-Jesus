@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colegio Growing White Jesús</title>
-  <link rel="stylesheet" href="css/estilos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colegio Growing White Jesus</title>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
-  <header class="encabezado">
-    <div class="titulo">
-      <h1>GROWING WHITE JESUS</h1>
-      <p class="versiculo">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" – Proverbios 22:6</p>
-    </div>
-    <button id="btn-login" class="btn-login" onclick="login()">Iniciar sesión</button>
+  <!-- Encabezado con fondo pastel -->
+  <header class="header-top">
+    <h1 class="titulo">GROWING WHITE JESUS</h1>
+    <p class="versiculo">
+      "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" — <em>Proverbios 22:6</em>
+    </p>
+    <button id="btn-login" onclick="login()">Iniciar sesión con Google</button>
     <div id="user-info"></div>
   </header>
 
-  <!-- Firebase SDK -->
+  <!-- Barra de navegación -->
+  <nav class="barra-navegacion">
+    <a href="#" class="nav-item activo">Información</a>
+    <a href="avisos.html" class="nav-item">Avisos</a>
+    <a href="#" class="nav-item">Eventos</a>
+    <a href="#" class="nav-item">Videos alumnos</a>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="contenido">
+    <section>
+      <h2>Bienvenido a la página oficial del colegio</h2>
+      <p>Aquí podrás encontrar toda la información relevante sobre nuestras actividades, eventos y mucho más.</p>
+    </section>
+  </main>
+
+  <!-- Scripts de Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
-
