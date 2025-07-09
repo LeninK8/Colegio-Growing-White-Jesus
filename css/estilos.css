@@ -1,93 +1,59 @@
-/* ======== GENERALES ======== */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
-  color: #2e3c53;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f2f7ff;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-/* ======== ENCABEZADO ======== */
 .encabezado {
-  background-color: #bbdefb;
-  padding: 25px 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
-.titulo {
-  font-size: 2.5em;
-  margin: 0;
-  color: #0d47a1;
+.titulo h1 {
+  font-size: 2.2rem;
+  color: #2a3b77;
+  margin-bottom: 0.5rem;
 }
 
 .versiculo {
-  margin-top: 8px;
-  font-size: 1em;
   font-style: italic;
-  color: #37474f;
+  font-size: 1rem;
+  color: #4b4b4b;
 }
 
-/* ======== NAVBAR ======== */
-.navbar {
-  background-color: #e8f5e9;
-  border-top: 2px solid #a5d6a7;
-  border-bottom: 2px solid #a5d6a7;
-  padding: 12px 0;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
-}
-
-.nav-list a {
-  text-decoration: none;
-  color: #1b5e20;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-list a:hover {
-  background-color: #c8e6c9;
-}
-
-/* Botón iniciar sesión */
 .btn-login {
-  background-color: #81c784;
+  background-color: #6fa8dc;
   border: none;
   color: white;
-  padding: 10px 16px;
-  border-radius: 0px; /* sin puntas */
-  cursor: pointer;
+  padding: 0.7rem 1.4rem;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1.5rem;
 }
 
 .btn-login:hover {
-  background-color: #66bb6a;
+  background-color: #3d85c6;
 }
 
-/* ======== CONTENIDO ======== */
-.contenido {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.bienvenida h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  color: #388e3c;
-}
-
-.bienvenida p {
-  font-size: 1.2em;
-  color: #455a64;
+#user-info {
+  margin-top: 1.2rem;
+  font-weight: bold;
+  color: #2a3b77;
+  font-size: 1.1rem;
 }
