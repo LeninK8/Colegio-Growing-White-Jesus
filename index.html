@@ -3,37 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colegio Growing White Jesus</title>
+  <title>Growing White Jesus</title>
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
-  <!-- Encabezado con fondo pastel -->
-  <header class="header-top">
-    <h1 class="titulo">GROWING WHITE JESUS</h1>
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <h1>GROWING WHITE JESUS</h1>
     <p class="versiculo">
-      "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" — <em>Proverbios 22:6</em>
+      "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" – <em>Proverbios 22:6</em>
     </p>
     <button id="btn-login" onclick="login()">Iniciar sesión con Google</button>
     <div id="user-info"></div>
   </header>
 
-  <!-- Barra de navegación -->
-  <nav class="barra-navegacion">
-    <a href="#" class="nav-item activo">Información</a>
-    <a href="avisos.html" class="nav-item">Avisos</a>
-    <a href="#" class="nav-item">Eventos</a>
-    <a href="#" class="nav-item">Videos alumnos</a>
+  <!-- NAVBAR -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="#info">Información</a></li>
+      <li><a href="avisos.html">Avisos</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="videos.html">Videos alumnos</a></li>
+    </ul>
   </nav>
 
-  <!-- Contenido principal -->
-  <main class="contenido">
-    <section>
-      <h2>Bienvenido a la página oficial del colegio</h2>
-      <p>Aquí podrás encontrar toda la información relevante sobre nuestras actividades, eventos y mucho más.</p>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor-principal">
+    <!-- Sección de Información -->
+    <section id="info" class="info">
+      <h2>Información</h2>
+      <p>Bienvenido a la web oficial del colegio Growing White Jesús. Aquí encontrarás eventos, noticias, y videos de los alumnos.</p>
     </section>
+
+    <!-- Recuadro con curiosidades -->
+    <aside class="curiosidades">
+      <h3>📖 Dato curioso bíblico</h3>
+      <p>¿Sabías que la Biblia ha sido traducida a más de 3,000 idiomas?</p>
+    </aside>
   </main>
 
-  <!-- Scripts de Firebase -->
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="js/firebase.js"></script>
