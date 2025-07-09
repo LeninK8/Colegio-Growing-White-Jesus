@@ -1,4 +1,4 @@
-/* Reset básico */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,54 +6,121 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f2f7ff;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fefefe;
   color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  line-height: 1.6;
 }
 
+/* ENCABEZADO */
 .encabezado {
+  background-color: #d0e6ff; /* azul pastel */
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 2rem 1rem;
+  border-bottom: 3px solid #b2d4f0;
 }
 
-.titulo h1 {
-  font-size: 2.2rem;
-  color: #2a3b77;
+.encabezado h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
   margin-bottom: 0.5rem;
 }
 
 .versiculo {
-  font-style: italic;
   font-size: 1rem;
-  color: #4b4b4b;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
-.btn-login {
-  background-color: #6fa8dc;
+#btn-login {
+  padding: 0.6rem 1.2rem;
   border: none;
-  color: white;
-  padding: 0.7rem 1.4rem;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 20px;
+  background-color: #ffd6e8; /* rosado pastel */
+  color: #333;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s;
-  margin-top: 1.5rem;
 }
 
-.btn-login:hover {
-  background-color: #3d85c6;
+#btn-login:hover {
+  background-color: #fcbfda;
 }
 
 #user-info {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   font-weight: bold;
-  color: #2a3b77;
-  font-size: 1.1rem;
+  color: #2e7d32;
 }
+
+/* NAVBAR */
+.nav-bar {
+  background-color: #ffe9c6; /* amarillo pastel */
+  padding: 0.8rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+  color: #0077b6;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenedor-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+.info {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  background-color: #e8f9e1; /* verde pastel */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.info h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.curiosidades {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  background-color: #fff1f8; /* rosado más suave */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.curiosidades h3 {
+  color: #8e44ad;
+  margin-bottom: 0.8rem;
+}
+
+.curiosidades p {
+  font-size: 1rem;
+  color: #555;
+}
+
