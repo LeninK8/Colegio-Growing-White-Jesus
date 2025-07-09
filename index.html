@@ -23,16 +23,19 @@
       border-bottom: 2px solid #c0e2ff;
     }
 
-    .logo {
-      background-color: #ffd700;
-      padding: 1rem;
-      font-weight: bold;
-      border-radius: 5px;
-      margin-right: 1rem;
+    .encabezado-izq {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .titulo {
-      flex: 1;
+    .logo-img {
+      height: 80px;
+      width: auto;
+      border-radius: 8px;
+      background-color: #ffd700;
+      padding: 0.5rem;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     }
 
     .titulo h1 {
@@ -48,7 +51,7 @@
     nav {
       display: flex;
       gap: 0.8rem;
-      margin-top: 0.5rem;
+      margin: 1rem;
       flex-wrap: wrap;
     }
 
@@ -77,10 +80,12 @@
 </head>
 <body>
   <header>
-    <div class="logo">logo del colegio</div>
-    <div class="titulo">
-      <h1>GROWING WHITE JESUS</h1>
-      <p class="versiculo">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" – Proverbios 22:6</p>
+    <div class="encabezado-izq">
+      <img src="img/logo.png" alt="Logo del Colegio" class="logo-img">
+      <div class="titulo">
+        <h1>GROWING WHITE JESUS</h1>
+        <p class="versiculo">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" – Proverbios 22:6</p>
+      </div>
     </div>
     <button class="btn-login" onclick="login()">Inicio sesión</button>
   </header>
