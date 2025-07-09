@@ -5,20 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avisos - Colegio Growing White Jesús</title>
   <link rel="stylesheet" href="css/estilos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #e9f4ff;
+      overflow-x: hidden;
+    }
+
+    .encabezado {
+      background-color: #b3d9ff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .volver {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #007acc;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+
+    .volver:hover {
+      background-color: #dcefff;
+    }
+
+    .avisos {
+      margin: 30px auto;
+      max-width: 800px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .avisos h2 {
+      color: #1b4f72;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .avisos ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .avisos li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      padding-left: 10px;
+      border-left: 4px solid #007acc;
+    }
+
+    /* Burbujas */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 122, 204, 0.3);
+      border-radius: 50%;
+      animation: floatUp 10s infinite ease-in;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-1200px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="encabezado">
     <h1>Avisos del Colegio</h1>
-    <a href="index.html">← Volver al inicio</a>
+    <a class="volver" href="index.html">← Volver al inicio</a>
   </header>
 
   <main class="avisos">
-    <h2>Próximos Eventos y Comunicados</h2>
+    <h2>📢 Próximos Eventos y Comunicados</h2>
     <ul>
-      <li>📅 *15 de agosto:* Día de la Familia – Evento especial en el patio principal.</li>
-      <li>📢 *Recordatorio:* Traer la Biblia todos los lunes para devocionales.</li>
-      <li>📝 *Inscripciones abiertas* para el taller de danza cristiana.</li>
+      <li>📅 <strong>15 de agosto:</strong> Día de la Familia – Evento especial en el patio principal.</li>
+      <li>🕊️ <strong>Cada lunes:</strong> Devocional bíblico - Traer Biblia personal.</li>
+      <li>💃 <strong>Nuevo taller:</strong> Inscripciones abiertas para danza cristiana.</li>
+      <li>🎨 <strong>Arte y Fe:</strong> Concurso de dibujo bíblico – Entrega hasta el 20 de agosto.</li>
     </ul>
   </main>
+
+  <!-- Burbujas animadas -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      bubble.style.width = bubble.style.height = (Math.random() * 20 + 10) + "px";
+      document.body.appendChild(bubble);
+    }
+  </script>
 </body>
 </html>
