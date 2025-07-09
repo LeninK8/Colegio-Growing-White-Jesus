@@ -5,19 +5,23 @@
   box-sizing: border-box;
 }
 
+/* FUENTE Y BODY */
 body {
   font-family: "Segoe UI", sans-serif;
-  background-color: #fefefe;
+  background: linear-gradient(to bottom, #f8fbff, #fefefe);
   color: #333;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ENCABEZADO */
 .encabezado {
-  background-color: #d0e6ff; /* azul pastel */
+  background-color: #d0e6ff;
   text-align: center;
   padding: 2rem 1rem;
-  border-bottom: 3px solid #b2d4f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .encabezado h1 {
@@ -32,10 +36,11 @@ body {
   margin-bottom: 1rem;
 }
 
+/* BOTÓN LOGIN */
 #btn-login {
   padding: 0.6rem 1.2rem;
   border: none;
-  background-color: #ffd6e8; /* rosado pastel */
+  background-color: #ffd6e8;
   color: #333;
   border-radius: 8px;
   cursor: pointer;
@@ -55,24 +60,23 @@ body {
 
 /* NAVBAR */
 .nav-bar {
-  background-color: #ffe9c6; /* amarillo pastel */
-  padding: 0.8rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #ffe9c6;
+  padding: 1rem;
 }
 
 .nav-bar ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .nav-bar a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  font-size: 1.1rem;
   transition: color 0.3s;
 }
 
@@ -80,20 +84,22 @@ body {
   color: #0077b6;
 }
 
-/* CONTENIDO PRINCIPAL */
+/* CONTENEDOR PRINCIPAL */
 .contenedor-principal {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-start;
   padding: 2rem 1rem;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* INFORMACIÓN */
 .info {
-  flex: 1;
-  min-width: 280px;
-  max-width: 600px;
-  background-color: #e8f9e1; /* verde pastel */
+  flex: 1 1 300px;
+  background-color: #e8f9e1;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -104,11 +110,10 @@ body {
   margin-bottom: 1rem;
 }
 
+/* CURIOSIDADES */
 .curiosidades {
-  flex: 1;
-  min-width: 280px;
-  max-width: 400px;
-  background-color: #fff1f8; /* rosado más suave */
+  flex: 1 1 300px;
+  background-color: #fff1f8;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -120,6 +125,27 @@ body {
 }
 
 .curiosidades p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* MEDIA QUERIES PARA AJUSTES FINOS */
+@media (max-width: 768px) {
+  .encabezado h1 {
+    font-size: 2rem;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contenedor-principal {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
   font-size: 1rem;
   color: #555;
 }
