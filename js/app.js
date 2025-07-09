@@ -5,6 +5,7 @@ function login() {
     .then((result) => {
       const user = result.user;
       mostrarUsuario(user); // ✅ Mostramos usuario después de login
+      ocultarBotonLogin();  // ✅ Ocultamos el botón
     })
     .catch((error) => {
       console.error("Error al iniciar sesión:", error);
@@ -21,9 +22,18 @@ function mostrarUsuario(user) {
   }
 }
 
+// Función para ocultar el botón de login
+function ocultarBotonLogin() {
+  const loginBtn = document.getElementById("btn-login");
+  if (loginBtn) {
+    loginBtn.style.display = "none";
+  }
+}
+
 // Detectar si ya hay un usuario logueado al cargar la página
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     mostrarUsuario(user);
+    ocultarBotonLogin();
   }
 });
