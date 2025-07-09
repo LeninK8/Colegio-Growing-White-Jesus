@@ -29,13 +29,20 @@
       gap: 1rem;
     }
 
-    .logo-img {
+    .logo-box {
       height: 80px;
-      width: auto;
-      border-radius: 8px;
-      background-color: #ffd700;
-      padding: 0.5rem;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      width: 80px;
+      background-color: #fff;
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-img {
+      max-height: 100%;
+      max-width: 100%;
     }
 
     .titulo h1 {
@@ -81,7 +88,9 @@
 <body>
   <header>
     <div class="encabezado-izq">
-      <img src="img/logo.png" alt="Logo del Colegio" class="logo-img">
+      <div class="logo-box">
+        <img src="img/logo.png" alt="Logo del Colegio" class="logo-img">
+      </div>
       <div class="titulo">
         <h1>GROWING WHITE JESUS</h1>
         <p class="versiculo">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" – Proverbios 22:6</p>
