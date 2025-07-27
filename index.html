@@ -8,14 +8,14 @@
 </head>
 <body>
 
-  <header class="encabezado">
+  <header class="encabezado" style="background-color: #d0e8ff;"> <!-- Azul suave -->
     <h1>Colegio Growing White Jesús</h1>
     <p class="versiculo">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" - Proverbios 22:6</p>
     <button id="btn-login" onclick="login()">Iniciar sesión con Google</button>
     <div id="user-info"></div>
   </header>
 
-  <nav class="nav-bar">
+  <nav class="nav-bar" style="background-color: #ffe4b3;"> <!-- Amarillo suave -->
     <ul>
       <li><a href="#informacion">Información</a></li>
       <li><a href="avisos.html">Avisos</a></li>
@@ -24,30 +24,53 @@
     </ul>
   </nav>
 
-  <main class="contenedor-principal">
-    <section id="informacion" class="info">
-  <h2>Información del colegio</h2>
-  <p>
-    El <strong>Colegio Growing White Jesús</strong> es una institución educativa cristiana comprometida con la formación académica, espiritual y emocional de sus estudiantes. Nos enfocamos en brindar una educación con valores, basada en el amor de Dios y el respeto por los demás.
-  </p>
-  <p>
-    Ofrecemos los niveles de <strong>educación inicial y primaria</strong>, con un equipo docente capacitado que utiliza metodologías modernas, dinámicas y personalizadas. Nuestra enseñanza se refuerza con actividades lúdicas, talleres de arte, lectura bíblica, deporte, música y más.
-  </p>
-  <p>
-    Nuestro propósito es formar generaciones con principios sólidos, capaces de impactar positivamente su entorno y seguir el camino correcto según las enseñanzas de la Palabra de Dios.
-  </p>
-  <p>
-    📍 Ubícanos en <em>Ate Vitarte, Lima - Perú</em><br>
-    📞 Contacto directo: <strong>+51 949 962 672</strong><br>
-    📧 Correo institucional: <a href="mailto:pilarportella7@gmail.com">pilarportella7@gmail.com</a>
-  </p>
-</section>
+  <main class="contenedor-principal" style="background-color: #f0f9f0;"> <!-- Verde muy claro -->
+    <section id="informacion" class="info" style="background-color: #e0f8e0; padding: 1rem; border-radius: 10px;">
+      <h2 style="color: #1e5d2f;">Información del colegio</h2>
+      <p>
+        El <strong>Colegio Growing White Jesús</strong> es una institución educativa cristiana comprometida con la formación académica, espiritual y emocional de sus estudiantes. Nos enfocamos en brindar una educación con valores, basada en el amor de Dios y el respeto por los demás.
+      </p>
+      <p>
+        Ofrecemos los niveles de <strong>educación inicial y primaria</strong>, con un equipo docente capacitado que utiliza metodologías modernas, dinámicas y personalizadas. Nuestra enseñanza se refuerza con actividades lúdicas, talleres de arte, lectura bíblica, deporte, música y más.
+      </p>
+      <p>
+        Nuestro propósito es formar generaciones con principios sólidos, capaces de impactar positivamente su entorno y seguir el camino correcto según las enseñanzas de la Palabra de Dios.
+      </p>
+      <p>
+        📍 Ubícanos en <em>Ate Vitarte, Lima - Perú</em><br>
+        📞 Contacto directo: <strong>+51 949 962 672</strong><br>
+        📧 Correo institucional: <a href="mailto:pilarportella7@gmail.com">pilarportella7@gmail.com</a>
+      </p>
+    </section>
 
-
-    <aside class="curiosidades">
-      <h3>Dato Curioso Bíblico 📖</h3>
+    <aside class="curiosidades" style="background-color: #ffe8f4; padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+      <h3 style="color: #a03a81;">Dato Curioso Bíblico 📖</h3>
       <p>La Biblia es el libro más vendido y traducido del mundo. ¡Se ha traducido a más de 3,000 idiomas!</p>
     </aside>
+
+    <section style="margin-top: 2rem;">
+      <h2 style="text-align:center; color:#1e5d2f;">Ubicación del Colegio 🗺️</h2>
+      <div style="display: flex; justify-content: center; margin-top: 1rem;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.643271248174!2d-76.9353081!3d-12.1458186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c716229b80a3%3A0x3f5d92d27458926a!2sAte%20Vitarte!5e0!3m2!1ses-419!2spe!4v1694532056565" 
+          width="90%" 
+          height="300" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h2 style="text-align:center; color:#003b80;">Momentos en el colegio 📸</h2>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+        <img src="img/foto1.jpg" alt="Foto 1" style="width: 300px; border-radius: 10px;" />
+        <img src="img/foto2.jpg" alt="Foto 2" style="width: 300px; border-radius: 10px;" />
+        <img src="img/foto3.jpg" alt="Foto 3" style="width: 300px; border-radius: 10px;" />
+      </div>
+    </section>
   </main>
 
   <!-- Firebase SDK -->
@@ -58,4 +81,4 @@
   <script src="js/curiosidadesbiblicas.js"></script>
 
 </body>
-</html> 
+</html>
