@@ -1,130 +1,144 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventos - Growing White Jesús</title>
-  <link rel="stylesheet" href="estilos.css">
-  <style>
-    body {
-      background-color: #f0f8ff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Eventos - Growing White Jesús</title>  
+  <link rel="stylesheet" href="estilos.css">  
+  <style>  
+    body {  
+      background-color: #f0f8ff;  
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+      margin: 0;  
+      padding: 0;  
+    }  
 
-    .titulo {
-      text-align: center;
-      background-color: #004080;
+    .titulo {  
+      text-align: center;  
+      background-color: #004080;  
+      color: white;  
+      padding: 20px;  
+      font-size: 28px;  
+      position: relative;  
+      z-index: 2;  
+    }  
+
+    .btn-volver {
+      display: block;
+      margin: 20px auto 0 auto;
+      padding: 10px 20px;
+      background-color: #0066cc;
       color: white;
-      padding: 20px;
-      font-size: 28px;
-      position: relative;
-      z-index: 2;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    .contenedor-eventos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px;
-      position: relative;
-      z-index: 2;
+    .btn-volver:hover {
+      background-color: #004c99;
     }
 
-    .evento {
-      background-color: #ffffffcc;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+    .contenedor-eventos {  
+      display: flex;  
+      flex-wrap: wrap;  
+      justify-content: center;  
+      gap: 20px;  
+      padding: 40px;  
+      position: relative;  
+      z-index: 2;  
+    }  
 
-    .evento:hover {
-      transform: scale(1.05);
-    }
+    .evento {  
+      background-color: #ffffffcc;  
+      padding: 20px;  
+      border-radius: 20px;  
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);  
+      width: 250px;  
+      text-align: center;  
+      transition: transform 0.3s;  
+    }  
 
-    .evento h3 {
-      color: #004080;
-      margin-bottom: 10px;
-    }
+    .evento:hover {  
+      transform: scale(1.05);  
+    }  
 
-    .evento p {
-      font-size: 14px;
-      color: #333;
-    }
+    .evento h3 {  
+      color: #004080;  
+      margin-bottom: 10px;  
+    }  
 
-    /* Burbuja flotante */
-    .burbuja {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.2;
-      z-index: 1;
-      animation: flotar 15s infinite ease-in-out;
-    }
+    .evento p {  
+      font-size: 14px;  
+      color: #333;  
+    }  
 
-    .burbuja1 {
-      width: 120px;
-      height: 120px;
-      background-color: #00aaff;
-      top: 20%;
-      left: 10%;
-    }
+    .burbuja {  
+      position: absolute;  
+      border-radius: 50%;  
+      opacity: 0.2;  
+      z-index: 1;  
+      animation: flotar 15s infinite ease-in-out;  
+    }  
 
-    .burbuja2 {
-      width: 100px;
-      height: 100px;
-      background-color: #ffaa00;
-      top: 60%;
-      left: 80%;
-    }
+    .burbuja1 {  
+      width: 120px;  
+      height: 120px;  
+      background-color: #00aaff;  
+      top: 20%;  
+      left: 10%;  
+    }  
 
-    .burbuja3 {
-      width: 80px;
-      height: 80px;
-      background-color: #00ffaa;
-      top: 80%;
-      left: 20%;
-    }
+    .burbuja2 {  
+      width: 100px;  
+      height: 100px;  
+      background-color: #ffaa00;  
+      top: 60%;  
+      left: 80%;  
+    }  
 
-    @keyframes flotar {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-30px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
-    }
-  </style>
-</head>
-<body>
+    .burbuja3 {  
+      width: 80px;  
+      height: 80px;  
+      background-color: #00ffaa;  
+      top: 80%;  
+      left: 20%;  
+    }  
+
+    @keyframes flotar {  
+      0% { transform: translateY(0px); }  
+      50% { transform: translateY(-30px); }  
+      100% { transform: translateY(0px); }  
+    }  
+  </style>  
+</head>  
+<body>  
   <div class="titulo">Eventos Escolares</div>
 
-  <div class="contenedor-eventos">
-    <div class="evento">
-      <h3>Feria de Ciencia</h3>
-      <p>Descubre los proyectos científicos creados por nuestros alumnos. ¡Innovación y creatividad!</p>
-    </div>
-    <div class="evento">
-      <h3>Día del Logro</h3>
-      <p>Celebración de los avances académicos con presentaciones y reconocimientos especiales.</p>
-    </div>
-    <div class="evento">
-      <h3>Festival de Navidad</h3>
-      <p>Presentaciones artísticas, villancicos y una gran chocolatada para cerrar el año.</p>
-    </div>
-  </div>
+  <!-- Botón Volver al Inicio -->
+  <a href="index.html">
+    <button class="btn-volver">⬅ Volver al Inicio</button>
+  </a>  
 
-  <!-- Burbujas -->
-  <div class="burbuja burbuja1"></div>
-  <div class="burbuja burbuja2"></div>
-  <div class="burbuja burbuja3"></div>
-</body>
+  <div class="contenedor-eventos">  
+    <div class="evento">  
+      <h3>Feria de Ciencia</h3>  
+      <p>Descubre los proyectos científicos creados por nuestros alumnos. ¡Innovación y creatividad!</p>  
+    </div>  
+    <div class="evento">  
+      <h3>Día del Logro</h3>  
+      <p>Celebración de los avances académicos con presentaciones y reconocimientos especiales.</p>  
+    </div>  
+    <div class="evento">  
+      <h3>Festival de Navidad</h3>  
+      <p>Presentaciones artísticas, villancicos y una gran chocolatada para cerrar el año.</p>  
+    </div>  
+  </div>  
+
+  <!-- Burbujas -->  
+  <div class="burbuja burbuja1"></div>  
+  <div class="burbuja burbuja2"></div>  
+  <div class="burbuja burbuja3"></div>  
+</body>  
 </html>
-
