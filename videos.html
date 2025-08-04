@@ -3,193 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Videos Alumnos | Growing White Jesús</title>
+  <title>Videos Alumnos - Growing White Jesús</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #111;
-      color: #fff;
-    }
-
-    h1 {
-      text-align: center;
-      padding: 20px 10px 10px;
-      font-size: 2em;
-    }
-
-    .volver {
-      display: block;
-      width: fit-content;
-      margin: 10px auto 20px;
-      padding: 10px 20px;
-      background-color: #28a745;
-      border: none;
-      border-radius: 8px;
       color: white;
-      font-size: 1em;
-      text-decoration: none;
-      text-align: center;
-      transition: background 0.3s;
     }
 
-    .volver:hover {
-      background-color: #218838;
-    }
-
-    .seccion {
-      margin-bottom: 40px;
-    }
-
-    .fecha {
-      font-size: 1.3em;
-      margin-left: 20px;
-      margin-top: 20px;
-    }
-
-    .carrusel {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
+    header {
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
       padding: 20px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .item {
-      flex: 0 0 auto;
-      width: 250px;
-      background-color: #222;
-      border-radius: 10px;
-      overflow: hidden;
-      scroll-snap-align: center;
-      cursor: pointer;
-    }
-
-    .item img, .item video {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-      flex-direction: column;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 80%;
-      margin-bottom: 20px;
-      border-radius: 12px;
-    }
-
-    .comentarios {
-      width: 80%;
-      max-width: 600px;
-      background-color: #222;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: left;
-    }
-
-    .comentarios textarea {
-      width: 100%;
-      height: 60px;
-      border-radius: 8px;
-      border: none;
-      resize: none;
-      padding: 10px;
-      font-size: 1em;
-    }
-
-    .reacciones {
-      margin: 10px 0;
       text-align: center;
+      border-bottom: 3px solid gold;
     }
 
-    .reacciones span {
-      font-size: 1.5em;
-      margin: 0 10px;
-      cursor: pointer;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: gold;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.3);
     }
 
-    .cerrar {
-      margin-top: 10px;
-      padding: 8px 16px;
-      font-size: 1em;
-      border: none;
-      border-radius: 6px;
-      background-color: crimson;
-      color: white;
-      cursor: pointer;
+    .btn-regresar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      color: gold;
+      border: 1px solid gold;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: background 0.3s ease;
     }
 
-    .cerrar:hover {
-      background-color: darkred;
+    .btn-regresar:hover {
+      background-color: gold;
+      color: black;
     }
   </style>
 </head>
 <body>
+  <a href="index.html" class="btn-regresar">⬅ Volver a Inicio</a>
+  <header>
+    <h1>Videos de los Alumnos</h1>
+  </header>
+  <section id="independencia" style="padding: 40px; background-color: #f5f5f5;">
+  <h2 style="text-align: center; color: #2c3e50; font-size: 32px; margin-bottom: 30px;">🇵🇪 La Independencia del Perú</h2>
 
-  <h1>Videos y Fotos de Alumnos 🎬</h1>
-  <a href="index.html" class="volver">⬅ Regresar a Inicio</a>
+  <!-- Inicial -->
+  <h3 style="color: #34495e;">Inicial</h3>
 
-  <!-- Ejemplo de sección -->
-  <div class="seccion">
-    <div class="fecha">📅 Día de la Madre</div>
-    <div class="carrusel">
-      <div class="item"><img src="fotos/mama1.jpg" alt="Foto mamá" onclick="mostrarModal(this.src, 'img')"></div>
-      <div class="item"><video src="fotos/mama2.mp4" onclick="mostrarModal(this.src, 'video')" muted></video></div>
-      <div class="item"><img src="fotos/mama3.jpg" alt="Foto mamá" onclick="mostrarModal(this.src, 'img')"></div>
-    </div>
+  <!-- 3 años -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 3 años</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_3años.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
   </div>
 
-  <!-- Agrega más secciones así -->
-  <div class="seccion">
-    <div class="fecha">📅 Fiesta Fin de Año</div>
-    <div class="carrusel">
-      <div class="item"><img src="fotos/fiesta1.jpg" onclick="mostrarModal(this.src, 'img')"></div>
-      <div class="item"><video src="fotos/fiesta2.mp4" onclick="mostrarModal(this.src, 'video')" muted></video></div>
-      <div class="item"><img src="fotos/fiesta3.jpg" onclick="mostrarModal(this.src, 'img')"></div>
-    </div>
+  <!-- 4 años -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 4 años</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_4años.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
   </div>
 
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <div id="modalContent" class="modal-content"></div>
-
-    <div class="comentarios">
-      <label for="comentario">💬 Deja tu comentario:</label><br>
-      <textarea id="comentario" placeholder="Escribe algo bonito..."></textarea>
-      <div class="reacciones">❤️ 😄 😢 😍 🤯</div>
-    </div>
-
-    <button class="cerrar" onclick="cerrarModal()">Cerrar</button>
+  <!-- 5 años -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 5 años</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_5años.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
   </div>
 
-  <script>
-    function mostrarModal(src, tipo) {
-      const modal = document.getElementById("modal");
-      const modalContent = document.getElementById("modalContent");
+  <!-- Primaria -->
+  <h3 style="color: #34495e; margin-top: 40px;">Primaria</h3>
 
-      modalContent.innerHTML = tipo === 'img' ?
-        <img src="${src}" style="max-width:100%; max-height:100%"> :
-        <video src="${src}" controls autoplay style="max-width:100%; max-height:100%"></video>;
+  <!-- 1ro -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 1er grado</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_1ro.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
 
-      modal.style.display = "flex";
-    }
+  <!-- 2do -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 2do grado</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_2do.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
 
-    function cerrarModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
-</body>
-</html>
+  <!-- 3ro -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 3er grado</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_3ro.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <!-- 4to -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 4to grado</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_4to.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <!-- 5to -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 5to grado</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_5to.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <!-- 6to -->
+  <div style="margin-bottom: 25px;">
+    <h4>🎥 6to grado</h4>
+    <video width="100%" height="auto" controls>
+      <source src="videos/independencia_6to.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+</section>
