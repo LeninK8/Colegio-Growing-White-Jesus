@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Videos de Alumnos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #f5f5f5;
+    }
+
+    .galeria {
+      padding: 20px;
+    }
+
+    .fecha {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .carrusel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .item {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 130px;
+      background-color: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      scroll-snap-align: start;
+      position: relative;
+    }
+
+    .item img, .item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      display: flex;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 80%;
+      height: 80%;
+    }
+
+    .media {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+    }
+
+    .media img, .media video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .info {
+      flex: 1;
+      padding: 20px;
+      background-color: #2b2b2b;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reacciones i {
+      font-size: 24px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .comentarios {
+      margin-top: 20px;
+    }
+
+    .comentarios textarea {
+      width: 100%;
+      height: 60px;
+      resize: none;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .comentarios .enviar {
+      margin-top: 10px;
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Galería de Videos e Imágenes de Alumnos</h1>
+<div class="galeria" id="galeria"></div>
+
+<div class="modal" id="modal">
+  <span class="cerrar" onclick="cerrarModal()">×</span>
+  <div class="modal-content">
+    <div class="media" id="modalMedia"></div>
+    <div class="info">
+      <div class="reacciones">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-laugh"></i>
+        <i class="fas fa-surprise"></i>
+        <i class="fas fa-thumbs-up"></i>
+      </div>
+      <div class="comentarios">
+        <textarea placeholder="Escribe un comentario..."></textarea>
+        <button class="enviar">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const archivos = [
+    "2025-08-01_video1.mp4",
+    "2025-08-01_foto1.jpg",
+    "2025-08-01_foto2.jpg",
+    "2025-08-02_video1.mp4",
+    "2025-08-02_foto1.jpg"
+  ];
+
+  const galeria = document.getElementById('galeria');
+
+  const agrupados = archivos.reduce((acc, archivo) => {
+    const fecha = archivo.split('_')[0];
+    if (!acc[fecha]) acc[fecha] = [];
+    acc[fecha].push(archivo);
+    return acc;
+  }, {});
+
+  for (const fecha in agrupados) {
+    const divFecha = document.createElement('div');
+    divFecha.innerHTML = `<div class="fecha">${fecha}</div>`;
+    const carrusel = document.createElement('div');
+    carrusel.classList.add('carrusel');
+
+    agrupados[fecha].forEach(archivo => {
+      const ext = archivo.split('.').pop().toLowerCase();
+      const item = document.createElement('div');
+      item.classList.add('item');
+      if (ext === 'mp4') {
+        item.innerHTML = `<video src="images/${archivo}" muted></video>`;
+      } else {
+        item.innerHTML = `<img src="images/${archivo}">`;
+      }
+
+      item.onclick = () => abrirModal(archivo);
+      carrusel.appendChild(item);
+    });
+
+    divFecha.appendChild(carrusel);
+    galeria.appendChild(divFecha);
+  }
+
+  function abrirModal(archivo) {
+    const ext = archivo.split('.').pop().toLowerCase();
+    const modal = document.getElementById('modal');
+    const modalMedia = document.getElementById('modalMedia');
+    modalMedia.innerHTML = ext === 'mp4'
+      ? `<video src="images/${archivo}" controls autoplay></video>`
+      : `<img src="images/${archivo}">`;
+    modal.style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('modalMedia').innerHTML = '';
+  }
+</script>
+
+</body>
+</html>
 
