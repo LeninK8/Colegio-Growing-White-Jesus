@@ -1,149 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Videos de Alumnos</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: white;
-      margin: 0;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-      color: #f5f5f5;
-    }
-
-    .galeria {
-      padding: 20px;
-    }
-
-    .fecha {
-      font-size: 20px;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #ccc;
-    }
-
-    .carrusel {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .item {
-      flex: 0 0 auto;
-      width: 200px;
-      height: 130px;
-      background-color: #222;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-      scroll-snap-align: start;
-      position: relative;
-    }
-
-    .item img, .item video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .modal-content {
-      display: flex;
-      background-color: #1e1e1e;
-      border-radius: 10px;
-      overflow: hidden;
-      width: 80%;
-      height: 80%;
-    }
-
-    .media {
-      flex: 3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #000;
-    }
-
-    .media img, .media video {
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .info {
-      flex: 1;
-      padding: 20px;
-      background-color: #2b2b2b;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .reacciones i {
-      font-size: 24px;
-      margin: 5px;
-      cursor: pointer;
-    }
-
-    .comentarios {
-      margin-top: 20px;
-    }
-
-    .comentarios textarea {
-      width: 100%;
-      height: 60px;
-      resize: none;
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .comentarios .enviar {
-      margin-top: 10px;
-      background-color: #4caf50;
-      border: none;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .cerrar {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Galería Multimedia de Alumnos</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body { margin:0; font-family: Arial, sans-serif; background: #121212; color: white; }
+  h1 { text-align:center; margin-top:20px; }
+  .seccion { margin: 30px auto; max-width: 900px; border-radius: 15px; padding:20px; background:#1e1e1e; }
+  .fecha { font-size: 22px; margin-bottom: 15px; color: #ccc; }
+  .video-principal { width: 100%; max-height: 500px; background:#000; border-radius:10px; overflow:hidden; display:flex; justify-content:center; align-items:center; }
+  .video-principal video { width:100%; height:auto; max-height:500px; object-fit:cover; }
+  .fotos { display:flex; gap:10px; overflow-x:auto; margin-top:10px; padding-bottom:10px; }
+  .foto { flex:0 0 auto; width:150px; height:100px; border-radius:8px; overflow:hidden; cursor:pointer; }
+  .foto img { width:100%; height:100%; object-fit:cover; }
+  /* Modal */
+  .modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:none; justify-content:center; align-items:center; z-index:999; }
+  .modal-content { display:flex; width:80%; max-width:1000px; height:80%; background:#2b2b2b; border-radius:10px; overflow:hidden; }
+  .media { flex:3; display:flex; justify-content:center; align-items:center; background:#000; }
+  .media img, .media video { max-width:100%; max-height:100%; }
+  .info { flex:1; padding:20px; display:flex; flex-direction:column; overflow-y:auto; }
+  .reacciones i { font-size:24px; margin:5px; cursor:pointer; }
+  .comentarios { margin-top:20px; }
+  .comentarios textarea { width:100%; height:60px; resize:none; background:#333; color:white; border:none; padding:10px; border-radius:5px; }
+  .comentarios .enviar { margin-top:10px; background:#4caf50; border:none; color:white; padding:5px 10px; border-radius:5px; cursor:pointer; }
+  .cerrar { position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer; }
+</style>
 </head>
 <body>
 
-<h1>Galería de Videos e Imágenes de Alumnos</h1>
-<div class="galeria" id="galeria"></div>
+<h1>Galería Multimedia de Alumnos</h1>
+<div id="galeria"></div>
 
 <div class="modal" id="modal">
   <span class="cerrar" onclick="cerrarModal()">×</span>
@@ -151,75 +38,137 @@
     <div class="media" id="modalMedia"></div>
     <div class="info">
       <div class="reacciones">
-        <i class="fas fa-heart"></i>
-        <i class="fas fa-laugh"></i>
-        <i class="fas fa-surprise"></i>
-        <i class="fas fa-thumbs-up"></i>
+        <i class="fas fa-heart" onclick="reaccion('❤️')"></i>
+        <i class="fas fa-laugh" onclick="reaccion('😂')"></i>
+        <i class="fas fa-surprise" onclick="reaccion('😮')"></i>
+        <i class="fas fa-thumbs-up" onclick="reaccion('👍')"></i>
       </div>
       <div class="comentarios">
-        <textarea placeholder="Escribe un comentario..."></textarea>
-        <button class="enviar">Enviar</button>
+        <textarea id="comentarioInput" placeholder="Escribe un comentario..."></textarea>
+        <button class="enviar" onclick="enviarComentario()">Enviar</button>
+        <div id="listaComentarios"></div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  const archivos = [
-    "2025-08-01_video1.mp4",
-    "2025-08-01_foto1.jpg",
-    "2025-08-01_foto2.jpg",
-    "2025-08-02_video1.mp4",
-    "2025-08-02_foto1.jpg"
-  ];
+const archivos = [
+  "2025-08-01_video1.mp4",
+  "2025-08-01_foto1.jpg",
+  "2025-08-01_foto2.jpg",
+  "2025-08-02_video1.mp4",
+  "2025-08-02_foto1.jpg",
+  "2025-08-02_foto2.jpg"
+];
 
-  const galeria = document.getElementById('galeria');
+// Guardado local
+const reaccionesDB = JSON.parse(localStorage.getItem('reaccionesDB') || '{}');
+const comentariosDB = JSON.parse(localStorage.getItem('comentariosDB') || '{}');
 
-  const agrupados = archivos.reduce((acc, archivo) => {
-    const fecha = archivo.split('_')[0];
-    if (!acc[fecha]) acc[fecha] = [];
-    acc[fecha].push(archivo);
-    return acc;
-  }, {});
+const galeria = document.getElementById('galeria');
 
-  for (const fecha in agrupados) {
-    const divFecha = document.createElement('div');
-    divFecha.innerHTML = `<div class="fecha">${fecha}</div>`;
-    const carrusel = document.createElement('div');
-    carrusel.classList.add('carrusel');
+// Agrupar por fecha
+const agrupados = archivos.reduce((acc, archivo)=>{
+  const fecha = archivo.split('_')[0];
+  if(!acc[fecha]) acc[fecha]=[];
+  acc[fecha].push(archivo);
+  return acc;
+}, {});
 
-    agrupados[fecha].forEach(archivo => {
-      const ext = archivo.split('.').pop().toLowerCase();
-      const item = document.createElement('div');
-      item.classList.add('item');
-      if (ext === 'mp4') {
-        item.innerHTML = `<video src="images/${archivo}" muted></video>`;
-      } else {
-        item.innerHTML = `<img src="images/${archivo}">`;
-      }
+for(const fecha in agrupados){
+  const seccion = document.createElement('div');
+  seccion.classList.add('seccion');
+  seccion.innerHTML = `<div class="fecha">${fecha}</div>`;
+  
+  // Video principal
+  const videos = agrupados[fecha].filter(a=>a.endsWith('.mp4'));
+  const fotos = agrupados[fecha].filter(a=>a.endsWith('.jpg') || a.endsWith('.png'));
+  
+  if(videos.length>0){
+    const vp = document.createElement('div');
+    vp.classList.add('video-principal');
+    vp.innerHTML = `<video src="images/${videos[0]}" controls onclick="abrirModal('${videos[0]}')"></video>`;
+    seccion.appendChild(vp);
+  }
 
-      item.onclick = () => abrirModal(archivo);
-      carrusel.appendChild(item);
+  // Fotos debajo
+  if(fotos.length>0){
+    const fotosDiv = document.createElement('div');
+    fotosDiv.classList.add('fotos');
+    fotos.forEach(f=>{
+      const fDiv = document.createElement('div');
+      fDiv.classList.add('foto');
+      fDiv.innerHTML = `<img src="images/${f}" onclick="abrirModal('${f}')">`;
+      fotosDiv.appendChild(fDiv);
     });
-
-    divFecha.appendChild(carrusel);
-    galeria.appendChild(divFecha);
+    seccion.appendChild(fotosDiv);
   }
 
-  function abrirModal(archivo) {
-    const ext = archivo.split('.').pop().toLowerCase();
-    const modal = document.getElementById('modal');
-    const modalMedia = document.getElementById('modalMedia');
-    modalMedia.innerHTML = ext === 'mp4'
-      ? `<video src="images/${archivo}" controls autoplay></video>`
-      : `<img src="images/${archivo}">`;
-    modal.style.display = 'flex';
-  }
+  galeria.appendChild(seccion);
+}
 
-  function cerrarModal() {
-    document.getElementById('modal').style.display = 'none';
-    document.getElementById('modalMedia').innerHTML = '';
-  }
+let currentArchivo = '';
+
+function abrirModal(archivo){
+  currentArchivo = archivo;
+  const ext = archivo.split('.').pop().toLowerCase();
+  const modal = document.getElementById('modal');
+  const modalMedia = document.getElementById('modalMedia');
+  modalMedia.innerHTML = ext==='mp4'
+    ? `<video src="images/${archivo}" controls autoplay></video>`
+    : `<img src="images/${archivo}">`;
+
+  // Cargar reacciones
+  const reaccionDiv = document.querySelector('.reacciones');
+  reaccionDiv.querySelectorAll('i').forEach(i=>i.style.color='white');
+  if(reaccionesDB[archivo]) reaccionDiv.querySelectorAll('i').forEach(i=>{
+    if(i.innerHTML===reaccionesDB[archivo]) i.style.color='red';
+  });
+
+  // Cargar comentarios
+  mostrarComentarios();
+  
+  modal.style.display='flex';
+}
+
+function cerrarModal(){
+  document.getElementById('modal').style.display='none';
+  document.getElementById('modalMedia').innerHTML='';
+  document.getElementById('comentarioInput').value='';
+  currentArchivo='';
+}
+
+// Reacciones
+function reaccion(emoji){
+  reaccionesDB[currentArchivo] = emoji;
+  localStorage.setItem('reaccionesDB', JSON.stringify(reaccionesDB));
+  abrirModal(currentArchivo); // refresca para ver cambio
+}
+
+// Comentarios
+function enviarComentario(){
+  const input = document.getElementById('comentarioInput');
+  if(!input.value) return;
+  if(!comentariosDB[currentArchivo]) comentariosDB[currentArchivo]=[];
+  comentariosDB[currentArchivo].push(input.value);
+  localStorage.setItem('comentariosDB', JSON.stringify(comentariosDB));
+  input.value='';
+  mostrarComentarios();
+}
+
+function mostrarComentarios(){
+  const lista = document.getElementById('listaComentarios');
+  lista.innerHTML='';
+  if(!comentariosDB[currentArchivo]) return;
+  comentariosDB[currentArchivo].forEach(c=>{
+    const div = document.createElement('div');
+    div.style.borderBottom='1px solid #444';
+    div.style.padding='5px 0';
+    div.textContent=c;
+    lista.appendChild(div);
+  });
+}
 </script>
 
 </body>
