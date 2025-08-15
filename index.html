@@ -9,22 +9,28 @@
 <body>
 
   <header class="encabezado" style="background-color: #ccff33; position: relative; padding: 1rem;"> <!-- Verde limón -->
-    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-      <h1 style="color: #003b80; margin: 0;">Growing White Jesús</h1> <!-- Azul -->
-    </div>
-    <p class="versiculo" style="text-align: center;">
-      "Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" - Proverbios 22:6
-    </p>
-    <button id="btn-login" onclick="login()" style="display:block; margin: 0 auto;">Iniciar sesión con Google</button>
-    <div id="user-info" style="text-align:center;"></div>
+    <h1 style="color: #003b80; margin: 0;">Growing White Jesús</h1>
+    <p class="versiculo" style="margin-top: 0.3rem;">"Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él" - Proverbios 22:6</p>
+    <button id="btn-login" onclick="login()">Iniciar sesión con Google</button>
+    <div id="user-info"></div>
 
     <!-- Recuadro circular para foto -->
-    <div style="position: absolute; bottom: -30px; left: 20px; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid #fff; background-color: #eee;">
+    <div style="
+      position: absolute;
+      bottom: -25px;
+      left: 15px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      background-color: #fff;
+    ">
       <img src="https://via.placeholder.com/80" alt="Foto" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
   </header>
 
-  <nav class="nav-bar" style="background-color: #ffe4b3;">
+  <nav class="nav-bar" style="background-color: #ffe4b3;"> <!-- Amarillo suave -->
     <ul>
       <li><a href="#informacion">Información</a></li>
       <li><a href="avisos.html">Avisos</a></li>
@@ -33,7 +39,7 @@
     </ul>
   </nav>
 
-  <main class="contenedor-principal" style="background-color: #f0f9f0;">
+  <main class="contenedor-principal" style="background-color: #f0f9f0;"> <!-- Verde muy claro -->
     <section id="informacion" class="info" style="background-color: #e0f8e0; padding: 1rem; border-radius: 10px;">
       <h2 style="color: #1e5d2f;">Información del colegio</h2>
       <p>
@@ -52,16 +58,10 @@
       </p>
     </section>
 
-    <aside class="curiosidades" style="background-color: #ffe8f4; padding: 1rem; border-radius: 10px; margin-top: 1rem; display: flex; align-items: center; justify-content: space-between;">
-      <h3 style="color: #a03a81; margin: 0;">
-        Dato Curioso Bíblico 📖
-      </h3>
-      <!-- Botón de recarga -->
-      <button onclick="recargarCuriosidad()" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">
-        🔄
-      </button>
+    <aside class="curiosidades" style="background-color: #ffe8f4; padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+      <h3 style="color: #a03a81;">Dato Curioso Bíblico 📖</h3>
+      <p>La Biblia es el libro más vendido y traducido del mundo. ¡Se ha traducido a más de 3,000 idiomas!</p>
     </aside>
-    <p id="texto-curiosidad">La Biblia es el libro más vendido y traducido del mundo. ¡Se ha traducido a más de 3,000 idiomas!</p>
 
     <section style="margin-top: 2rem;">
       <h2 style="text-align:center; color:#1e5d2f;">Ubicación del Colegio 🗺️</h2>
@@ -81,8 +81,8 @@
     <section style="margin-top: 2rem;">
       <h2 style="text-align:center; color:#003b80;">Momentos en el colegio 📸</h2>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-        <img src="https://scontent.flim1-2.fna.fbcdn.net/v/t39.30808-6/524415899_1320593650067220_3465508568470643752_n.jpg" alt="Foto 1" style="width: 300px; border-radius: 10px;" />
-        <img src="https://scontent.flim1-2.fna.fbcdn.net/v/t39.30808-6/240597820_254050663388196_7646007368293713012_n.png" alt="Foto 2" style="width: 300px; border-radius: 10px;" />
+        <img src="https://scontent.flim1-2.fna.fbcdn.net/v/t39.30808-6/524415899_1320593650067220_3465508568470643752_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9uGYew8beNoQ7kNvwE2s4HI&_nc_oc=AdmxQamqEqmta2_l9pM2TIug_-vP-UrYzd42Z4SD-LHgRZS4AdWAc3yCTlEO8FbC5hc&_nc_zt=23&_nc_ht=scontent.flim1-2.fna&_nc_gid=QfUIYcTfN5Cc_krMe7NCZg&oh=00_AfViuK0u8kUhE4p06Z8AU_sfwrBLuTZRzfPQn-bi-yzkbA&oe=68966FB0" alt="Foto 1" style="width: 300px; border-radius: 10px;" />
+        <img src="https://scontent.flim1-2.fna.fbcdn.net/v/t39.30808-6/240597820_254050663388196_7646007368293713012_n.png?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=jPBe9spte0YQ7kNvwE7VtN8&_nc_oc=AdlqSQeKS_RETh28q45Q7Ig4d3ZiFl2cTxhKdeBm6EEnvPV3azWoUuF5AAwKnQcXOvU&_nc_zt=23&_nc_ht=scontent.flim1-2.fna&_nc_gid=otkCEcxbOxtPCLCWPWzzpA&oh=00_AfVGxbosELkFcyMQlFCJoAaZ45DSjoF3JExnls_yDz2ebA&oe=689676E5" alt="Foto 2" style="width: 300px; border-radius: 10px;" />
         <img src="https://bing.com/th/id/BCO.1d4452ed-ce04-4f9a-b1ce-9ff58f23672c.png" alt="Foto 3" style="width: 300px; border-radius: 10px;" />
       </div>
     </section>
@@ -95,16 +95,5 @@
   <script src="js/app.js"></script>
   <script src="js/curiosidadesbiblicas.js"></script>
 
-  <script>
-    function recargarCuriosidad() {
-      if (typeof mostrarCuriosidadAleatoria === "function") {
-        mostrarCuriosidadAleatoria();
-      } else {
-        location.reload();
-      }
-    }
-  </script>
-
 </body>
 </html>
-
